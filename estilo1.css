@@ -1,0 +1,12 @@
+#div {
+    width: 500px;
+    background-color: yellow;
+    margin-left: 30%;
+}
+#img {
+    display: block;
+   margin-left: inherit;
+}
+#a:visited{
+    color: green
+}

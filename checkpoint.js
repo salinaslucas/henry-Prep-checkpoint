@@ -5,7 +5,18 @@ function menorMayor(numeros) {
   // Escribi una función llamada menorMayor que tome como entrada un arreglo de números y devuelva un arreglo 
   // que contenga el menor número del arreglo en la posición cero y el mayor número del arreglo en la posición 1.
   // Ej: menorMayor([4, 6, 1, 7, 15]) // retorna [1, 15]
- 
+  let menor, mayor;
+  for (let i = 0; i < numeros.length; i++) {
+    if (menor === undefined || numeros[i] < menor) {
+      menor = numeros[i];
+    }
+
+    if (mayor === undefined || numeros[i] > mayor) {
+      mayor = numeros[i];
+    }
+  }
+
+  return [menor, mayor];
 
 }
 
@@ -15,6 +26,15 @@ function stringMasLarga(strings) {
   // Ej:
   // stringMasLarga(['hi', 'hello', 'ni hao', 'guten tag']); // returns 'guten tag'
   // stringMasLarga(['JavaScript', 'HTML', 'CSS']); // returns 'JavaScript'
+  var masLarga;
+  for (var i = 0; i < strings.length; i++) {
+    var actual = strings[i];
+    if (masLarga === undefined || masLarga.length < actual.length) {
+      masLarga = actual;
+    }
+  }
+
+  return masLarga;
 
 }
 
@@ -25,7 +45,11 @@ function buscarAmigo(amigos, nombre) {
   // Ej:
   //  var amigos = [{ nombre: 'toni', edad: 33 } , { nombre: 'Emi', edad: 25 }];
   //  buscarAmigo(amigos, 'toni') // retorna { nombre: 'toni', edad: 33 };
-  
+  for (let i = 0; i < amigos.length; i++) {
+    if (amigos[i].nombre === nombre) {
+      return amigos[i];
+    }
+  }
 }
 
 function sumArray(array, n) {
@@ -36,6 +60,15 @@ function sumArray(array, n) {
   // sumArray([2,5,7,10,11,15,20], 13)  // retorna true     2+11 suman 13
   // sumArray([2,5,7,10,11,15,20], 14)  // retorna false
   // pista: podes usar bucles anidados;
+  for (let i = 0; i < array.length; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[i] + array[j] === n) {
+        return true;
+      }
+    }
+  }
+
+  return false;
   
 };
 
@@ -47,9 +80,13 @@ function pluck(array, propiedad) {
   // var productos = [{ name: 'TV LCD', price: 100}, { name: 'Computadora', price: 500 }]
   // productos.pluck(productos, 'name') // ['TV LCD', 'Computadora']
   // pista: es una buena oportunidad para usar map.
-  
-  
+  return array.map(function (producto) {
+    return producto[propiedad];
+  });
 }
+  
+  
+ 
 
 // =======================================================================
 
@@ -61,7 +98,11 @@ function crearClasePersona() {
   // Esta funcion debe retonar la clase Persona.
 
   class Persona {
-    constructor(nombre, edad, hobbies, amigos) {
+    constructor(nombre, edad, hobbies, amigos) { this.nombre = nombre;
+      this.edad = edad;
+      this.hobbies = hobbies;
+      this.amigos = amigos;
+
       
     }
 
@@ -69,12 +110,20 @@ function crearClasePersona() {
       // el metodo addFriend recibe un string nombre y un entero edad y debe agregar un objeto:
       // { nombre: nombre, edad: edad} al arreglo de amigos de la persona.
       // no debe retornar nada.
+      let amigo = {
+        nombre: nombre,
+        edad: edad
+      };
+      this.amigos.push(amigo);
+      
       
     }
 
     addHobby(hobby) {
       // este método debe agregar un hobby (hobby) al arreglo de hobbies de la persona.
       // no debe retornar nada.
+      this.hobbies.push(hobby);
+       
       
     }
     getFriends() {
@@ -82,6 +131,10 @@ function crearClasePersona() {
       // de la persona.
       // Ej:
       // persona.getFriends() // retorna ['toni', 'Leo', 'Manu']
+      return this.amigos.map(function (amigo) {
+        return amigo.nombre;
+      });
+      
       
     }
 
@@ -89,6 +142,7 @@ function crearClasePersona() {
       // Escribe una función que retorne un arreglo con los hobbies de la persona
       // Ej:
       // persona.getHobbies() // retorna ['correr', 'dormir', 'nadar']
+      return this.hobbies;
       
     }
 
@@ -105,6 +159,11 @@ function crearClasePersona() {
       //   }]
       // }
       // persona.getPromedioEdad() // retorna 29
+      var promedio = 0
+      for (var i= 0; i < this.amigos.length; i++){
+        promedio = promedio + this.amigos[i].edad;
+      }
+      return promedio / this.amigos.length;
     }
   };
 

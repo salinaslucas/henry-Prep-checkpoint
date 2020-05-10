@@ -1,0 +1,114 @@
+#div-negro {
+    background-color: black;
+    width: 100px;
+    height: 100px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-top: 1px black solid;
+    border-bottom: 30px black solid;
+    border-left: 1px black solid;
+    border-right: 20px black solid;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+#uno{border: 5px pink solid;
+    display: flex;
+    position: fixed;
+        left: 0%;
+        right: 0%;
+        bottom: 0%;
+    }
+        #uno-contact {
+        background-color: salmon;
+        width: 60px;
+        height: 60px;
+        color: white;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+    }
+        #uno-careers {
+        background-color: lightblue;
+        width: 60px;
+        height: 60px;
+        color: white;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+    }
+        #uno-about {
+        background-color: lightgreen;
+        width: 60px;
+        height: 60px;
+        color: white;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        margin-left: auto
+       ;}
+    #dos {
+        border: 5px orange solid;
+        text-align: center;
+    }
+        #dos-contact {
+            color: white;
+            background-color: salmon;   
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        #dos-careers {
+            color: white;
+            background-color: lightblue;   
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        #dos-about {
+            color: white;
+            background-color: lightgreen;   
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        #tres{border: 5px orange solid;
+            display: flex;
+            }
+                #tres-contact {
+                background-color: salmon;
+                width: 60px;
+                height: 60px;
+                color: white;
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                flex-direction: column;
+            }
+                #tres-careers {
+                background-color: lightblue;
+                width: 60px;
+                height: 60px;
+                color: white;
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                flex-direction: column;
+            }
+                #tres-about {
+                background-color: lightgreen;
+                width: 60px;
+                height: 60px;
+                color: white;
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                flex-direction: column
+               ;}
