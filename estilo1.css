@@ -1,7 +1,11 @@
 #div {
     width: 500px;
     background-color: yellow;
-    margin-left: 30%;
+    margin-left: 30%t;
+}
+#ul {
+    font-size: 25px;    
+    color: red
 }
 #img {
     display: block;
